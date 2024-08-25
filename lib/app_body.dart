@@ -8,27 +8,37 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
- TextEditingController search_product = TextEditingController();
+  TextEditingController search_product = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body:  Row(
+      body: Row(
+crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Text(
-          //   'Shoes \nCollection',
-          //   style: TextStyle(
-          //       fontFamily: 'Pelita',
-          //       fontWeight: FontWeight.w600,
-          //       fontSize: 30),
-          // ),
+          Text(
+            'Shoes \nCollection',
+            style: TextStyle(
+                fontFamily: 'Pelita',
+                fontWeight: FontWeight.bold,
+                fontSize: 24),
+          ),
           // SizedBox(
           //   height: 50,
           //   width: 300,
           // ),
-          TextField(
-            controller: search_product,
+          SizedBox(
+            height: 300,
+            width: 100,
+          ),
+          SizedBox(
+            width: 290,
+            height: 300,
+            child: TextField(
+              controller: search_product,
+              decoration:const InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(20)))),
+            ),
           )
         ],
       ),
