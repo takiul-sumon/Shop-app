@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/app_body.dart';
+import './app_body.dart';
+
 
 void main() {
   runApp(const shop_app());
