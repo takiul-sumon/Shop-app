@@ -22,22 +22,22 @@ crossAxisAlignment: CrossAxisAlignment.start,
             style: TextStyle(
                 fontFamily: 'Pelita',
                 fontWeight: FontWeight.bold,
-                fontSize: 24),
+                fontSize: 26),
           ),
           // SizedBox(
           //   height: 50,
           //   width: 300,
           // ),
+          // SizedBox(
+          //   height: 300,
+          //   width: 100,
+          // ),
           SizedBox(
-            height: 300,
-            width: 100,
-          ),
-          SizedBox(
-            width: 290,
+            width: 380,
             height: 300,
             child: TextField(
               controller: search_product,
-              decoration:const InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(20)))),
+              decoration:const InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.horizontal(left: Radius.circular(25))),hintText: 'Search',prefixIcon: Icon(Icons.search)),
             ),
           )
         ],
