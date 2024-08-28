@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import './app_body.dart';
 
-
 void main() {
   runApp(const shop_app());
 }
@@ -16,9 +15,12 @@ class shop_app extends StatefulWidget {
 class _shop_appState extends State<shop_app> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Pelita',hintColor: Colors.redAccent
+      ),
       debugShowCheckedModeBanner: false,
-     home: homepage(),
+      home: homepage(),
     );
   }
 }
