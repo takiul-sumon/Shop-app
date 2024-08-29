@@ -50,15 +50,8 @@ class _homepageState extends State<homepage> {
                 itemBuilder: (BuildContext context, int index) {
                   final filter = filters[index];
                   return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Text(filter),
-                      foregroundDecoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                      color: Colors.black45,
-                      padding: EdgeInsets.all(10),
-                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Chip(label: Text(filter)),
                   );
                 },
               ),
