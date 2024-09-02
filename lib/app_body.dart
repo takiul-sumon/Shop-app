@@ -9,7 +9,8 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   TextEditingController search_product = TextEditingController();
-  final List<String> filters = <String>['All', 'Adidas', 'Nike', 'Bata'];
+  final List<String> filters = <String>['All', 'Adidas', 'Nike', 'Bata', 'Bay'];
+  String? selected_Item;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _homepageState extends State<homepage> {
                     decoration: const InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.horizontal(
-                                left: Radius.circular(25))),
+                                left: Radius.circular(30))),
                         hintText: 'Search',
                         prefixIcon: Icon(Icons.search)),
                   ),
@@ -42,7 +43,7 @@ class _homepageState extends State<homepage> {
               ],
             ),
             SizedBox(
-              height: 100,
+              height: 120,
               width: double.infinity,
               child: ListView.builder(
                 itemCount: filters.length,
@@ -50,8 +51,18 @@ class _homepageState extends State<homepage> {
                 itemBuilder: (BuildContext context, int index) {
                   final filter = filters[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Chip(label: Text(filter)),
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: GestureDetector(
+                      onTap: () {
+                        selected_Item = filter;
+                        print(selected_Item);
+                      },
+                      child: Chip(
+                          label: Text(filter),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                          backgroundColor: Color.fromRGBO(245, 247, 249, 1)),
+                    ),
                   );
                 },
               ),
