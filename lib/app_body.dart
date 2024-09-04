@@ -63,7 +63,7 @@ class _homepageState extends State<homepage> {
                         backgroundColor:selected_Item==filter? 
                         Theme.of(context).colorScheme.primary:const Color.fromRGBO(245, 247, 249, 1),
                         side:const BorderSide(color:Colors.amberAccent),
-                          label: Text(filter, style:selected_Item==filter? TextStyle(color: Colors.white) :TextStyle(),),
+                          label: Text(filter, style:selected_Item==filter? TextStyle(color: Colors.white) :TextStyle(fontWeight: FontWeight.w700),),
                           padding:
                           const    EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                               
