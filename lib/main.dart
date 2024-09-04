@@ -16,9 +16,7 @@ class _shop_appState extends State<shop_app> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Pelita',hintColor: Colors.redAccent
-      ),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(254, 206, 1, 1)),),
       debugShowCheckedModeBanner: false,
       home: homepage(),
     );

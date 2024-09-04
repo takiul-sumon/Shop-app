@@ -51,17 +51,21 @@ class _homepageState extends State<homepage> {
                 itemBuilder: (BuildContext context, int index) {
                   final filter = filters[index];
                   return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding:const EdgeInsets.symmetric(horizontal: 30),
                     child: GestureDetector(
                       onTap: () {
-                        selected_Item = filter;
+                        setState(() {
+                          selected_Item = filter;
                         print(selected_Item);
+                        });
                       },
                       child: Chip(
+                        backgroundColor:selected_Item==filter? Theme.of(context).colorScheme.primary: Color.fromRGBO(245, 247, 249, 1),
                           label: Text(filter),
                           padding:
-                              EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                          backgroundColor: Color.fromRGBO(245, 247, 249, 1)),
+                          const    EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                              
+                         ),
                     ),
                   );
                 },
