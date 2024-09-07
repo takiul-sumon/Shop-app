@@ -85,8 +85,8 @@ class _homepageState extends State<homepage> {
               child: ListView.builder(
                   itemCount: products.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final select_shoe = products[index]['id'];
-                    return ProductCard(title: 'Hi', price: 25);
+                    final select_shoe = products[index];
+                    return ProductCard(title: select_shoe['id'].toString(), price: int.parse(select_shoe['price'].toString()));
                   }),
             )
           ],
