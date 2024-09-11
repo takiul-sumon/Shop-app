@@ -86,9 +86,13 @@ class _homepageState extends State<homepage> {
                   itemCount: products.length,
                   itemBuilder: (BuildContext context, int index) {
                     final select_shoe = products[index];
-                    return ProductCard(title: select_shoe['id'].toString(), price: int.parse(select_shoe['price'].toString()),image:select_shoe['image'].toString());
+                    return ProductCard(title: select_shoe['title'].toString(),
+                     price: int.parse(select_shoe['price'].toString()),
+                    image:select_shoe['image'] as String,
+                    color: index.isEven ? Colors.lightBlue : Colors.black38);
                   }),
-            )
+            ),
+            
           ],
         ),
       ),
