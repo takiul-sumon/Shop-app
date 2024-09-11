@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/app_body.dart';
 import 'package:shop_app/product_Info.dart';
-import './product_card.dart';
 import './products.dart';
 
 void main() {
@@ -16,23 +14,26 @@ class shop_app extends StatefulWidget {
 }
 
 class _shop_appState extends State<shop_app> {
-  final select_shoe = products[0];
+  final select_shoe = products[3];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        fontFamily: 'Pelita',
           colorScheme: ColorScheme.fromSeed(
             seedColor: const Color.fromRGBO(254, 206, 1, 1),
           ),
           primaryColor: const Color.fromARGB(255, 255, 255, 255),
           textTheme: const TextTheme(
+            
               titleMedium: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
               titleSmall:
                   TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                  titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold))),
+                  titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                  )),
       debugShowCheckedModeBanner: false,
       home: Product_Info(
           title: select_shoe['title'].toString(),
