@@ -32,7 +32,7 @@ class _shop_appState extends State<shop_app> {
               ),
               titleSmall:
                   TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                  titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                  titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.amber),
                   )),
       debugShowCheckedModeBanner: false,
       home: Product_Info(
