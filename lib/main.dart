@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/app_body.dart';
 import 'package:shop_app/product_Info.dart';
 import './products.dart';
 
@@ -14,7 +15,7 @@ class shop_app extends StatefulWidget {
 }
 
 class _shop_appState extends State<shop_app> {
-  final select_shoe = products[3];
+  final select_shoe = products[0];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,10 +36,13 @@ class _shop_appState extends State<shop_app> {
                   titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.amber),
                   )),
       debugShowCheckedModeBanner: false,
-      home: Product_Info(
+      home: 
+      
+      Product_Info(
           title: select_shoe['title'].toString(),
           price: select_shoe['price'].toString(),
-          image: select_shoe['image'].toString()),
+          image: select_shoe['image'].toString(),
+          size: select_shoe['size'].toString()),
     );
   }
 }
