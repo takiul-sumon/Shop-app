@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
   final String title;
-  final int price;
+  final String price;
   final String image;
   final Color color;
   const ProductCard(

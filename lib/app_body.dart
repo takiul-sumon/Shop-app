@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/product_Info.dart';
 import 'package:shop_app/product_card.dart';
 import './products.dart';
 
@@ -86,13 +87,25 @@ class _homepageState extends State<homepage> {
                   itemCount: products.length,
                   itemBuilder: (BuildContext context, int index) {
                     final select_shoe = products[index];
-                    return ProductCard(title: select_shoe['title'].toString(),
-                     price: int.parse(select_shoe['price'].toString()),
-                    image:select_shoe['image'] as String,
-                    color: index.isEven ? Colors.lightBlue : Colors.black38);
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) {
+                              return Product_Info(product: select_shoe);
+                            },
+                          ));
+                        });
+                      },
+                      child: ProductCard(
+                          title: select_shoe['title'].toString(),
+                          price: select_shoe['price'].toString(),
+                          image: select_shoe['image'] as String,
+                          color:
+                              index.isEven ? Colors.lightBlue : Colors.black38),
+                    );
                   }),
             ),
-            
           ],
         ),
       ),
