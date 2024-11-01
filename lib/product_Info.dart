@@ -10,7 +10,7 @@ class Product_Info extends StatefulWidget {
 }
 
 class _Product_InfoState extends State<Product_Info> {
-  int? selected_size;
+  int? selected_size=0;
   // final List<String> Shoe_size = <String>['9', '10', '11', '12'];
 
   @override
@@ -107,7 +107,7 @@ class _Product_InfoState extends State<Product_Info> {
                                 Icon(Icons.shopping_cart_rounded),
                                 Text('Add To Cart',
                                     style:
-                                        Theme.of(context).textTheme.titleSmall)
+                                        Theme.of(context).textTheme.titleMedium)
                               ],
                             ),
                           ),
