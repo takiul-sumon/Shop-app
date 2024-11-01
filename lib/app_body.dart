@@ -70,8 +70,8 @@ class _homepageState extends State<homepage> {
                         label: Text(
                           filter,
                           style: selected_Item == filter
-                              ? TextStyle(color: Colors.white)
-                              : TextStyle(fontWeight: FontWeight.w700),
+                              ?const TextStyle(color: Colors.white)
+                              :const TextStyle(fontWeight: FontWeight.w700),
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 5),
@@ -102,7 +102,7 @@ class _homepageState extends State<homepage> {
                           price: select_shoe['price'].toString(),
                           image: select_shoe['image'] as String,
                           color:
-                              index.isEven ? Colors.lightBlue : Colors.black38),
+                              index.isEven ? Colors.lightBlue : Colors.black12),
                     );
                   }),
             ),

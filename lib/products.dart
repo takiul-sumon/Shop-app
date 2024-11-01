@@ -4,7 +4,7 @@ final products = [
     'title': "Nike Shoes",
     'price': '44',
     'size': [4, 5, 6, 7],
-    'image': 'assets/images/1.jpeg',
+    'image': 'assets/images/shoe1.png',
     'Company': 'Nike'
   },
   {
@@ -12,7 +12,7 @@ final products = [
     'title': "Adidas Shoes",
     'price': '45',
     'size': [4, 5, 6, 7],
-    'image': 'assets/images/2.png',
+    'image': 'assets/images/shoe2.png',
     'Company': 'Nike'
   },
   {
@@ -20,7 +20,7 @@ final products = [
     'title': "Bata Shoes",
     'price': '46',
     'size': [4, 5, 6, 7],
-    'image': 'assets/images/3.png',
+    'image': 'assets/images/shoe3.png',
     'Company': 'Nike'
   },
   {
@@ -28,7 +28,7 @@ final products = [
     'title': "Bay Shoes",
     'price': '47',
     'size': [4, 5, 6, 7],
-    'image': 'assets/images/4.png',
+    'image': 'assets/images/shoe4.png',
     'Company': 'Nike'
   },
 ];

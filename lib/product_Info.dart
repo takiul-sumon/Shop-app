@@ -31,7 +31,7 @@ class _Product_InfoState extends State<Product_Info> {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           Spacer(),
-          Image.asset(widget.product['image'] as String),
+          Image.asset(widget.product['image'] as String, height: 300,),
           Spacer(
             flex: 2,
           ),
