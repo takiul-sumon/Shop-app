@@ -47,9 +47,9 @@ class _Product_InfoState extends State<Product_Info> {
                 children: [
                   Text(widget.product['price'] as String,
                       style: Theme.of(context).textTheme.titleLarge),
-                  // Spacer(
-                  //   flex: 1,
-                  // ),
+                  Spacer(
+                    flex: 1,
+                  ),
                   SizedBox(
                     height: 50,
                     child: ListView.builder(
@@ -84,6 +84,36 @@ class _Product_InfoState extends State<Product_Info> {
                         );
                       },
                     ),
+                  ),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  InkWell(
+                        onTap: () {
+                          print('Hey');
+                        },
+                        child: Container(
+                          width: 300,
+                          height: 50,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: Colors.amber,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(35))),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.shopping_cart_rounded),
+                                Text('Add To Cart',
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall)
+                              ],
+                            ),
+                          ),
+                        ),),
+                  Spacer(
+                    flex: 1,
                   )
                 ],
               )),
@@ -92,3 +122,8 @@ class _Product_InfoState extends State<Product_Info> {
     );
   }
 }
+
+
+
+
+
