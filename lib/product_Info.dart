@@ -85,7 +85,7 @@ class _Product_InfoState extends State<Product_Info> {
                       },
                     ),
                   ),
-                  Spacer(
+                const  Spacer(
                     flex: 1,
                   ),
                   InkWell(
