@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/Product_list.dart';
 import 'package:shop_app/cart.dart';
-import 'package:shop_app/product_Info.dart';
-import 'package:shop_app/product_card.dart';
-import './products.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -41,6 +38,7 @@ class _homepageState extends State<homepage> {
     return Scaffold(
         body:current_Index==0 ? Product_list() : Cart(),
         bottomNavigationBar: BottomNavigationBar(
+          iconSize: 30,
             currentIndex: current_Index,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),

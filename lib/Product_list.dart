@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/product_Info.dart';
 import 'package:shop_app/product_card.dart';
 import 'package:shop_app/products.dart';
-import './app_body.dart';
+
 
 class Product_list extends StatefulWidget {
   const Product_list({super.key});
