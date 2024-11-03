@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/Product_list.dart';
 import 'package:shop_app/cart.dart';
 
@@ -35,8 +36,10 @@ class _homepageState extends State<homepage> {
 
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<String>(context));
     return Scaffold(
-        body:current_Index==0 ? Product_list() : Cart(),
+       
+      body:current_Index==0 ? Product_list() : Cart(),
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
             currentIndex: current_Index,

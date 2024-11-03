@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/app_body.dart';
 import './products.dart';
 
@@ -17,26 +18,29 @@ class _shop_appState extends State<shop_app> {
   final select_shoe = products[0];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Pelita',
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromRGBO(254, 206, 1, 1),
-          ),
-          primaryColor: const Color.fromARGB(255, 255, 255, 255),
-          textTheme: const TextTheme(
-            
-              titleMedium: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-              titleSmall:
-                  TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                  titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.amber),
-                  )),
-      debugShowCheckedModeBanner: false,
-      home: homepage()
-      // Product_Info(product: select_shoe),
+    return Provider(
+      create:(context)=>"Hello World",
+      child: MaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Pelita',
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromRGBO(254, 206, 1, 1),
+            ),
+            primaryColor: const Color.fromARGB(255, 255, 255, 255),
+            textTheme: const TextTheme(
+              
+                titleMedium: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                titleSmall:
+                    TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    titleLarge: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.amber),
+                    )),
+        debugShowCheckedModeBanner: false,
+        home: homepage()
+        // Product_Info(product: select_shoe),
+      ),
     );
   }
 }

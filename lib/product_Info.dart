@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:shop_app/cart_provider.dart';
 
 class Product_Info extends StatefulWidget {
   final Map<String, Object> product;
@@ -7,46 +8,59 @@ class Product_Info extends StatefulWidget {
 
   @override
   State<Product_Info> createState() => _Product_InfoState();
+  
 }
 
 class _Product_InfoState extends State<Product_Info> {
-  int? selected_size=0;
-  // final List<String> Shoe_size = <String>['9', '10', '11', '12'];
+  
+    final Map<String, Object>  productin;
+
+  
+  int? selected_size = 0;
+
+ onTap () {
+          Provider.of<CartProvider>(context,listen: false).addProduct(widget.productin);
+          }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Details",
-          style: Theme.of(context).textTheme.titleMedium,
+    return ChangeNotifierProvider(
+      create: (context) => CartProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Details",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            widget.product['title'] as String,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          Spacer(),
-          Image.asset(widget.product['image'] as String, height: 300,),
-          Spacer(
-            flex: 2,
-          ),
-          Container(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              widget.product['title'] as String,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Spacer(),
+            Image.asset(widget.product['image'] as String, height: 300),
+            Spacer(
+              flex: 2,
+            ),
+            Container(
               height: 200,
               width: double.infinity,
               decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(15),
-                  ),
-                  color: Color.fromRGBO(242, 241, 239, 1)),
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(15),
+                ),
+                color: Color.fromRGBO(242, 241, 239, 1),
+              ),
               child: Column(
                 children: [
-                  Text(widget.product['price'] as String,
-                      style: Theme.of(context).textTheme.titleLarge),
+                  Text(
+                    widget.product['price'] as String,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                   Spacer(
                     flex: 1,
                   ),
@@ -63,8 +77,7 @@ class _Product_InfoState extends State<Product_Info> {
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
-                                selected_size == shoe_Size;
-                                print('Hello');
+                                selected_size = shoe_Size; // Fixed line
                               });
                             },
                             child: Chip(
@@ -77,7 +90,8 @@ class _Product_InfoState extends State<Product_Info> {
                                 style: selected_size == shoe_Size
                                     ? const TextStyle(color: Colors.white)
                                     : const TextStyle(
-                                        fontWeight: FontWeight.w700),
+                                        fontWeight: FontWeight.w700,
+                                      ),
                               ),
                             ),
                           ),
@@ -85,45 +99,42 @@ class _Product_InfoState extends State<Product_Info> {
                       },
                     ),
                   ),
-                const  Spacer(
+                  const Spacer(
                     flex: 1,
                   ),
                   InkWell(
-                        onTap: () {
-                          print('Hey');
-                        },
-                        child: Container(
-                          width: 300,
-                          height: 50,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              color: Colors.amber,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(35))),
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.shopping_cart_rounded),
-                                Text('Add To Cart',
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium)
-                              ],
+                  onTap: onTap,
+                    child: Container(
+                      width: 300,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.all(Radius.circular(35)),
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.shopping_cart_rounded),
+                            Text(
+                              'Add To Cart',
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
-                          ),
-                        ),),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                   Spacer(
                     flex: 1,
-                  )
+                  ),
                 ],
-              )),
-        ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
-
-
