@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/app_body.dart';
+import 'package:shop_app/cart_provider.dart';
 import './products.dart';
 
 void main() {
@@ -18,8 +19,7 @@ class _shop_appState extends State<shop_app> {
   final select_shoe = products[0];
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create:(context)=>"Hello World",
+    return MultiProvider(providers: [ChangeNotifierProvider(create: (context) => CartProvider())],
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: 'Pelita',
