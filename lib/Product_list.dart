@@ -98,7 +98,7 @@ class _Product_listState extends State<Product_list> {
                     child: ProductCard(
                         title: select_shoe['title'].toString(),
                         price: select_shoe['price'].toString(),
-                        image: select_shoe['image'] as String,
+                        image: select_shoe['image'].toString(),
                         color:
                             index.isEven ? Colors.lightBlue : Colors.black12),
                   );

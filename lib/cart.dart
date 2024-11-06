@@ -2,21 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/cart_provider.dart';
 
-import './products.dart';
 
-class Cart extends StatefulWidget {
+
+class Cart extends StatelessWidget {
   const Cart({super.key});
 
   @override
-  State<Cart> createState() => _CartState();
-}
-
-class _CartState extends State<Cart> {
-  
-  @override
   Widget build(BuildContext context) {
      final cart = context.watch<CartProvider>().cart;
-    print(Provider.of<CartProvider>(context).cart);
+    // print(Provider.of<CartProvider>(context).cart);
     return Scaffold(
       appBar: AppBar(
         title: Text(

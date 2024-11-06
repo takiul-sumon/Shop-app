@@ -5,18 +5,13 @@ import 'package:shop_app/cart_provider.dart';
 import './products.dart';
 
 void main() {
-  runApp(const shop_app());
+  runApp( shop_app());
 }
 
-class shop_app extends StatefulWidget {
-  const shop_app({super.key});
+class shop_app extends StatelessWidget {
+   shop_app({super.key});
 
-  @override
-  State<shop_app> createState() => _shop_appState();
-}
 
-class _shop_appState extends State<shop_app> {
-  final select_shoe = products[0];
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [ChangeNotifierProvider(create: (context) => CartProvider())],
@@ -39,7 +34,6 @@ class _shop_appState extends State<shop_app> {
                     )),
         debugShowCheckedModeBanner: false,
         home: homepage()
-        // Product_Info(product: select_shoe),
       ),
     );
   }

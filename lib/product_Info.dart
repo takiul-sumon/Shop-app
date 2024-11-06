@@ -15,10 +15,16 @@ class _Product_InfoState extends State<Product_Info> {
 
   void onTap() {
     if (selected_size != 0) {
-      Provider.of<CartProvider>(context, listen: false)
-          .addProduct(widget.product);
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("Product Added Successfully")));
+      Provider.of<CartProvider>(context, listen: false).addProduct({
+        'id': widget.product['id'],
+        'title': widget.product['title'],
+        'price': widget.product['price'],
+        'imageUrl': widget.product['imageUrl'],
+        'company': widget.product['company'],
+        'size': widget.product['size']
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Product Added Successfully")));
     } else {
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text('Please select a size')));
@@ -40,7 +46,7 @@ class _Product_InfoState extends State<Product_Info> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            widget.product['title'] as String,
+            widget.product['title'].toString(),
             style: Theme.of(context).textTheme.titleLarge,
           ),
           Spacer(),
@@ -105,7 +111,7 @@ class _Product_InfoState extends State<Product_Info> {
                   flex: 1,
                 ),
                 InkWell(
-                  onTap:onTap,
+                  onTap: onTap,
                   child: Container(
                     width: 300,
                     height: 50,
