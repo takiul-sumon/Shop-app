@@ -13,15 +13,17 @@ class Product_Info extends StatefulWidget {
 class _Product_InfoState extends State<Product_Info> {
   int? selected_size = 0;
 
+
+
   void onTap() {
     if (selected_size != 0) {
       Provider.of<CartProvider>(context, listen: false).addProduct({
         'id': widget.product['id'],
         'title': widget.product['title'],
         'price': widget.product['price'],
-        'imageUrl': widget.product['imageUrl'],
+        'image': widget.product['image'],
         'company': widget.product['company'],
-        'size': widget.product['size']
+        'size': selected_size
       });
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Product Added Successfully")));
@@ -51,7 +53,7 @@ class _Product_InfoState extends State<Product_Info> {
           ),
           Spacer(),
           Image.asset(widget.product['image'] as String, height: 300),
-          Spacer(
+        const  Spacer(
             flex: 2,
           ),
           Container(
@@ -69,7 +71,7 @@ class _Product_InfoState extends State<Product_Info> {
                   widget.product['price'] as String,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                Spacer(
+              const  Spacer(
                   flex: 1,
                 ),
                 SizedBox(
@@ -124,7 +126,7 @@ class _Product_InfoState extends State<Product_Info> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.shopping_cart_rounded),
+                        const  Icon(Icons.shopping_cart_rounded),
                           Text(
                             'Add To Cart',
                             style: Theme.of(context).textTheme.titleMedium,
