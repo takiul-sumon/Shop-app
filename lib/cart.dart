@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/cart_provider.dart';
-
-
+import './cart_provider.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
 
   @override
   Widget build(BuildContext context) {
-     final cart = context.watch<CartProvider>().cart;
+    // void onTap(){
+    //   Provider.of<CartProvider>(context).removeListener(() {
+    //     'id': cart['id'],
+    //     'title': widget.product['title'],
+    //     'price': widget.product['price'],
+    //     'image': widget.product['image'],
+    //     'company': widget.product['company'],
+    //     'size': selected_size
+    //   },);
+    // }
+    final cart = context.watch<CartProvider>().cart;
     // print(Provider.of<CartProvider>(context).cart);
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +42,11 @@ class Cart extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               )),
               subtitle: Center(child: Text(cart_Item['size'].toString())),
-              trailing: IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+              trailing: IconButton(
+                  onPressed: () {
+                    context.read<CartProvider>().removeProduct(cart_Item);
+                  },
+                  icon: Icon(Icons.delete)),
             );
           },
         ),
