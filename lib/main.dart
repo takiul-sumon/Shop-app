@@ -20,7 +20,7 @@ class shop_app extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
               seedColor: const Color.fromRGBO(254, 206, 1, 1),
             ),
-            primaryColor: const Color.fromARGB(255, 255, 255, 255),
+            // primaryColor: const Color.fromARGB(255, 255, 255, 255),
             textTheme: const TextTheme(
               
                 titleMedium: TextStyle(
